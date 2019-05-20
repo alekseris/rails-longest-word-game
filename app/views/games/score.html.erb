@@ -1,0 +1,18 @@
+<h1>Result</h1>
+<div class="d-flex flex-row bg-white">
+  <%@check_letters.split(" ").each do |letter|%>
+  <div class="p-3 bg-success m-1">
+    <h2><%= letter.upcase%></h2>
+  </div>
+  <% end %>
+</div>
+
+<p><%= @word%></p>
+<%if @check_match == false %>
+<p> <%= 'sorry it does not match' %> </p>
+<% elsif @check_eng_word == false %>
+<p> <%= 'sorry it is not an english word' %></p>
+<% else %>
+<p><%='Congratulation!'%></p>
+<% end %>
+<%= link_to "new game", new_path %>
